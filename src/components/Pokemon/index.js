@@ -2,7 +2,7 @@ import React from 'react';
 import {Card} from 'react-bootstrap';
 import {Link} from 'react-router-dom'; //routing
 
-const pokemon = ({pokemon}) => {
+export default function pokemon({pokemon}) {
     return (
         <Card className='my-3 p-3 rounded text-center shadow p-3 mb-5 bg-white rounded' style={{ border: 'none' }}>
             <Link>
@@ -16,5 +16,3 @@ const pokemon = ({pokemon}) => {
         </Card>
     )
 }
-
-export default pokemon;

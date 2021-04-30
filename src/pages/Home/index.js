@@ -8,7 +8,7 @@ import Pokemon from '../../components/Pokemon/index';
 const Homepage = () => {
 
     const [pokemon, setPokemon] = useState([]); // retorna um valor e uma funcao para atualizar o valor.
-
+    
     // retorn uma ate 151 pokemons
     const getPokemonList = async () => {
         let pokemonArray = [];
@@ -31,9 +31,9 @@ const Homepage = () => {
 
     return (    
         <Row>
-            {pokemon.map( p =>(
-                <Col key={p.data.name} xs={12} sm={12} md={4} lg={4} xl={4}>
-                    <Pokemon pokemon={p.data}/>
+            {pokemon.map( poke =>(
+                <Col key={poke.data.name} xs={12} sm={12} md={4} lg={4} xl={4}>
+                    <Pokemon pokemon={poke.data}/>
                 </Col>
             ))}
         </Row>
