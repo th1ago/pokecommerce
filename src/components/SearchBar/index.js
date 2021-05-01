@@ -5,18 +5,22 @@ import api from '../../services/api';
 
 export default function Search(props) {
 
+    // retorna um valor e uma funcao para atualizar o valor
     const [pokemon, setPokemon] = useState("pikachu");
     const [pokemonData, setPokemonData] = useState([]);
 
+    // retorna o valor convetido para minusculo
     const handleChange = (e) => {
         setPokemon(e.target.value.toLowerCase());
     };
     
+    // cancela o evento, sem para a programacao 
     const handleSubmit = (e) => {
         e.preventDefault();
         getPokemon();
     };
     
+    // realiza um busca na api
     const getPokemon = async () => {
         const toArray = [];
         try {
@@ -28,10 +32,6 @@ export default function Search(props) {
           console.log(e);
         }
         console.log(pokemonData);
-
-        return (
-            <Card.Img style={{ width: '8rem' }} src={pokemon.sprites.front_default} variant='top'/>
-        );
     };
     
     return (

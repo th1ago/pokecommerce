@@ -1,10 +1,13 @@
 import React from 'react';
-import {Card} from 'react-bootstrap';
+import {Card, CardGroup} from 'react-bootstrap';
 import {Link} from 'react-router-dom'; //routing
 
+
+// exibe o card dos pokemons e seus valores
 export default function pokemon({pokemon}) {
     return (
-        <Card className='my-3 p-3 rounded text-center shadow p-3 mb-5 bg-white rounded' style={{ border: 'none' }}>
+        <CardGroup>
+            <Card className='my-3 p-3 rounded text-center shadow p-3 mb-5 bg-white rounded' style={{ border: 'none' }}>
             <Link>
                 <Card.Img style={{ width: '8rem' }} src={pokemon.sprites.front_default} variant='top'/>
             </Link>
@@ -13,6 +16,10 @@ export default function pokemon({pokemon}) {
                     <Card.Title as='div'><strong>#{pokemon.id} {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</strong></Card.Title>
                 </Link>
             </Card.Body>
+            <Card.Footer>
+                <small className="text-muted">Valor de R$11,11</small>
+            </Card.Footer>
         </Card>
+        </CardGroup>
     )
 }
