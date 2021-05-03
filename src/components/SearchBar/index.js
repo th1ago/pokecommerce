@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Form, Col, Button, Container} from 'react-bootstrap';
+import {Form, Col, Button, Container, Card} from 'react-bootstrap';
 
 import api from '../../services/api';
 
@@ -8,7 +8,7 @@ export default function Search(props) {
     // retorna um valor e uma funcao para atualizar o valor
     const [pokemonName, setPokemonName] = useState("")
     const [pokemon, setPokemon] = useState({
-        name: "",
+        type: "",
         img: "",
     });
 
@@ -29,7 +29,7 @@ export default function Search(props) {
         api.get(`pokemon/${pokemonName}`)
         .then ((response) => {
             setPokemon({
-                name: response.data.name,
+                type: response.data.types[0].type.name,
                 img: response.data.sprites.front_default
             })
             console.log(response);
@@ -58,8 +58,8 @@ export default function Search(props) {
                     </Button>
                 </Col>
             </Form.Row>
-            <h1>{pokemon.name}</h1>
-            <img src={pokemon.img}/>
+            <h1>{pokemon.type}</h1>
+            <Card.Img style={{ width: '8rem' }} src={pokemon.img} variant='top'/>
         </Container>
     )
 }
