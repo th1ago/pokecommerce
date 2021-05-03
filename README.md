@@ -4,7 +4,7 @@
 
 # PokeCommerce
 
-## Projeto de um e-commercer conshumido o api do pokemon (https://pokeapi.co/)
+## Projeto de um e-commercer consumindo api pokemon com react(https://pokeapi.co/)
 
 
 Tabela de conteúdos
