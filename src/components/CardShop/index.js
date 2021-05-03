@@ -1,9 +1,20 @@
 import React from 'react';
-import {Nav} from 'react-bootstrap';
+import {Button} from 'react-bootstrap';
 
 export default function Shop() {
 
+    const shop = (e) => {
+        return (
+            alert("Desculpe o transtorno. \nEstamos trabalhando para melhor atende-los")
+        )
+    }
+
     return (
-        <Nav.Link href="/">Shop</Nav.Link>
+        <Button 
+            type="submit"
+            onClick={shop}>
+        Shop
+        </Button>
+
     )
 }

@@ -1,12 +1,13 @@
 import React from 'react';
-import {Navbar, Container, Nav} from 'react-bootstrap';
+import {Navbar, Container} from 'react-bootstrap';
 import {LinkContainer} from 'react-router-bootstrap' // behave like a react router
 
 // component
-import Search from '../SearchBar/index'
-import Shop from '../CardShop/index'
+import Search from '../SearchBar'
+import Shop from '../CardShop'
 
 export default function Header(){
+
     return (
         <header>
             <Navbar>

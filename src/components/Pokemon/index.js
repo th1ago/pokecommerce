@@ -2,7 +2,6 @@ import React from 'react';
 import {Card, CardGroup} from 'react-bootstrap';
 import {Link} from 'react-router-dom'; //routing
 
-
 // exibe o card dos pokemons e seus valores
 export default function pokemon({pokemon}) {
     return (

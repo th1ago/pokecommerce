@@ -3,13 +3,13 @@ import api from '../../services/api';
 import { Row, Col } from 'react-bootstrap';
 
 // Components
-import Pokemon from '../../components/Pokemon/index';
+import Pokemon from '../../components/Pokemon';
 
-const Homepage = () => {
+export default function HomePage() {
 
-    const [pokemon, setPokemon] = useState([]); 
+    const [pokemon, setPokemon] = useState([]); // retorna um valor e uma funcao para atualizar o valor.
     
-    // retorn ate 151 pokemons
+    // retorn uma ate 151 pokemons
     const getPokemonList = async () => {
         let pokemonArray = [];
         for(let i = 1; i <= 151; i ++){ 
@@ -29,10 +29,9 @@ const Homepage = () => {
         getPokemonList();
     }, [])
 
-    // demonstra os cads dos pokemons
-    return (    
+    return (
         <Row>
-            {pokemon.map(poke =>(
+            {pokemon.map( poke =>(
                 <Col key={poke.data.name} xs={12} sm={12} md={2} lg={2} xl={3}>
                     <Pokemon pokemon={poke.data}/>
                 </Col>
@@ -40,5 +39,3 @@ const Homepage = () => {
         </Row>
     )
 }
-
-export default Homepage
