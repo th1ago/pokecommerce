@@ -8,6 +8,7 @@ export default function Search(props) {
     // retorna um valor e uma funcao para atualizar o valor
     const [pokemonName, setPokemonName] = useState("")
     const [pokemon, setPokemon] = useState({
+        name: "",
         type: "",
         img: "",
     });
@@ -29,6 +30,7 @@ export default function Search(props) {
         api.get(`pokemon/${pokemonName}`)
         .then ((response) => {
             setPokemon({
+                name: response.data.name,
                 type: response.data.types[0].type.name,
                 img: response.data.sprites.front_default
             })
@@ -58,8 +60,10 @@ export default function Search(props) {
                     </Button>
                 </Col>
             </Form.Row>
-            <h1>{pokemon.type}</h1>
-            <Card.Img style={{ width: '8rem' }} src={pokemon.img} variant='top'/>
+            <Card className='my-3 p-3 rounded text-center shadow p-3 mb-5 bg-white rounded' style={{ border: 'none' }}>
+                <Card.Img style={{ width: '8rem' }} src={pokemon.img} variant='top'alt="Pokemon"/>
+                <Card.Title as='div'><strong>{pokemon.id} {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</strong></Card.Title>
+            </Card>
         </Container>
     )
 }
