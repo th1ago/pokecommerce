@@ -1,5 +1,5 @@
 <h4 align="center"> 
-	🚧  React Select 🚀 Em construção...  🚧
+	🚧  React 🚀 Em construção...  🚧
 </h4>
 
 # PokeCommerce
