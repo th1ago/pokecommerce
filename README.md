@@ -26,8 +26,11 @@ Um case no qual teria que se fazer uma replica de um Ecommerce, consumindo uma A
 yarn install
 
 Rode a aplicacao no modo development.
+
 Abrir [http://localhost:3000](http://localhost:3000) veja no browser.
+
 A pagina vai carregar
+
 Você também verá quaisquer erros no lint do console
 
 
