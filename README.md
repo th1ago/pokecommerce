@@ -49,11 +49,10 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 
 ### License
-[![license]]
 
 MIT License
 
-Copyright (c) <2020> <Thiago>
+Copyright (c) 2021 Thiago
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
