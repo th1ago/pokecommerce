@@ -8,7 +8,8 @@ import Pokemon from '../../components/Pokemon';
 export default function HomePage() {
 
     const [pokemon, setPokemon] = useState([]); // retorna um valor e uma funcao para atualizar o valor.
-    
+    const [loading, setLoading] = useState(false); // add loader
+
     // retorn uma ate 151 pokemons
     const getPokemonList = async () => {
         let pokemonArray = [];
@@ -26,12 +27,16 @@ export default function HomePage() {
 
     // sera executada depois que a renderizacao estiver disponivel na tela
     useEffect(() => {
-        getPokemonList();
+        setLoading(true);
+        setTimeout(() =>{
+            setLoading(false);
+            getPokemonList();
+        }, 3000)
     }, [])
 
     return (
         <Row>
-            {pokemon.map( poke =>(
+            {loading ? "Carregando..." : pokemon.map( poke =>(
                 <Col key={poke.data.name} xs={12} sm={12} md={2} lg={2} xl={3}>
                     <Pokemon pokemon={poke.data}/>
                 </Col>
